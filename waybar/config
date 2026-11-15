@@ -1,0 +1,125 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 52,
+    "spacing": 4,
+    "reload_style_on_change": true,
+    "exclusive": true,
+
+    "modules-center": [
+        "custom/start",
+        "custom/search",
+        "wlr/taskbar"
+    ],
+
+    "modules-right": [
+        "tray",
+        "hyprland/language",
+        "group/sys",
+        "clock",
+        "custom/power"
+    ],
+
+    "group/sys": {
+        "orientation": "horizontal",
+        "modules": [
+            "network",
+            "backlight",
+            "pulseaudio",
+            "battery"
+        ]
+    },
+
+    "custom/start": {
+        "format": "",
+        "on-click": "rofi -show drun -show-icons",
+        "tooltip": false
+    },
+
+    "custom/search": {
+        "format": "󰍉  Search",
+        "on-click": "rofi -show drun -show-icons",
+        "tooltip": false
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        "tooltip-format": "{title}",
+        "spacing": 2,
+        "on-click": "activate",
+        "on-click-middle": "close"
+    },
+
+    "clock": {
+        "format": "{:%H:%M\n%d/%m/%Y}",
+        "interval": 10,
+        "tooltip-format": "<big>{:%A}</big>\n<tt>{calendar}</tt>",
+        "on-click": "swaync-client -t -sw"
+    },
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰀂",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\nIP: {ipaddr}",
+        "tooltip-format-ethernet": "IP: {ipaddr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "on-click": "alacritty --class wifi-tui -e nmtui-connect",
+        "on-click-right": "alacritty --class wifi-tui -e nmtui"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "~/.config/hypr/scripts/volume.sh mute",
+        "on-scroll-up": "~/.config/hypr/scripts/volume.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/volume.sh down",
+        "tooltip-format": "{volume}%"
+    },
+
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip-format": "Brightness: {percent}%",
+        "interval": 2,
+        "on-click": "swaync-client -t -sw",
+        "on-scroll-up": "~/.config/hypr/scripts/brightness.sh up",
+        "on-scroll-down": "~/.config/hypr/scripts/brightness.sh down"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-charging": "󰢜",
+        "format-plugged": "󰂄",
+        "format-full": "󰁹",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        }
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 4,
+        "show-passive": false
+    },
+
+    "hyprland/language": {
+        "format": "{short}",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout || ~/.config/hypr/scripts/powermenu.sh",
+        "tooltip": false
+    }
+}
