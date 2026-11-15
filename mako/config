@@ -1,0 +1,9 @@
+default-timeout=5000
+max-visible=5
+border-radius=8
+border-color=#0078d4
+background-color=#f3f3f3
+text-color=#1a1a1a
+padding=12
+margin=8
+width=360
