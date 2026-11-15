@@ -1,0 +1,123 @@
+/* Wallpaper selector: compact gallery that fits a typical laptop display. */
+
+* {
+  font: "JetBrainsMono Nerd Font 12";
+  background-color: transparent;
+  text-color: #f5f7ff;
+}
+
+window {
+  width: 960px;
+  location: center;
+  anchor: center;
+  background-color: #10131de8;
+  border: 1px;
+  border-color: #ffffff24;
+  border-radius: 16px;
+  padding: 0px;
+}
+
+mainbox {
+  children: [ "inputbar", "listview" ];
+  spacing: 0px;
+}
+
+/* Search stays visually separate from the gallery. */
+inputbar {
+  children: [ "prompt", "entry" ];
+  padding: 13px 16px;
+  spacing: 12px;
+  background-color: #1b2030e6;
+  border: 0px 0px 1px 0px;
+  border-color: #ffffff1c;
+  border-radius: 16px 16px 0px 0px;
+}
+
+prompt {
+  enabled: true;
+  padding: 8px 10px;
+  font: "JetBrainsMono Nerd Font Bold 15";
+  text-color: #a9c8ff;
+  vertical-align: 0.5;
+}
+
+entry {
+  expand: true;
+  padding: 8px 12px;
+  font: "JetBrainsMono Nerd Font 14";
+  text-color: #ffffff;
+  placeholder: "Search wallpapers…";
+  placeholder-color: #9ca6bd;
+  cursor: text;
+  vertical-align: 0.5;
+}
+
+/* Three generous previews per row, with enough room for landscape images. */
+listview {
+  columns: 3;
+  lines: 2;
+  fixed-columns: true;
+  fixed-height: true;
+  dynamic: false;
+  layout: vertical;
+  scrollbar: true;
+  spacing: 10px;
+  padding: 14px 16px 16px;
+}
+
+element {
+  orientation: vertical;
+  spacing: 9px;
+  padding: 8px;
+  border: 1px;
+  border-color: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+element normal.normal {
+  background-color: #ffffff08;
+  text-color: #f5f7ff;
+}
+
+element normal.active {
+  background-color: #ffffff14;
+  border-color: #ffffff20;
+}
+
+element selected.normal {
+  background-color: #2d6fc9;
+  border-color: #8abaff;
+  text-color: #ffffff;
+}
+
+element selected.active {
+  background-color: #3b7fd8;
+  border-color: #bed7ff;
+  text-color: #ffffff;
+}
+
+/* The direct file icon from the script is rendered here as the preview. */
+element-icon {
+  size: 180px;
+  expand: true;
+  cursor: inherit;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-text {
+  expand: true;
+  padding: 2px 5px 4px;
+  font: "JetBrainsMono Nerd Font Medium 11";
+  text-color: inherit;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+scrollbar {
+  width: 6px;
+  handle-color: #79abef;
+  background-color: #ffffff12;
+  border-radius: 6px;
+}

@@ -1,0 +1,100 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   Windows 11 Start Menu - Rofi Theme
+   Centered, acrylic background, Fluent Design
+   ────────────────────────────────────────────────────────────────────────── */
+
+* {
+  font: "Google Sans Flex 12";
+  background-color: transparent;
+}
+
+window {
+  width: 600px;
+  location: center;
+  anchor: center;
+  border: 1;
+  border-color: #323248;
+  border-radius: 12px;
+  background-color: #1a1a2eb3; /* added transparency */
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ── Layout ──────────────────────────────── */
+mainbox {
+  children: [ "inputbar", "listview" ];
+  spacing: 0px;
+  padding: 0px;
+}
+
+/* ── Search Bar ──────────────────────────── */
+inputbar {
+  children: [ "prompt", "entry" ];
+  padding: 14px 16px;
+  spacing: 8px;
+  background-color: #20202ab3; /* added transparency */
+  border-radius: 12px 12px 0 0;
+  border: 0;
+  border-color: #323248;
+  border-bottom: 1;
+}
+
+prompt {
+  enabled: true;
+  background-color: transparent;
+  text-color: #999999;
+  padding: 8px 12px;
+  font: "JetBrainsMono Nerd Font 16";
+  vertical-align: 0.5;
+}
+
+entry {
+  padding: 8px 12px;
+  font: "JetBrainsMono Nerd Font 14";
+  text-color: #ffffff;
+  background-color: transparent;
+  vertical-align: 0.5;
+  expand: true;
+}
+
+/* ── App List ────────────────────────────── */
+listview {
+  lines: 8;
+  columns: 2;
+  fixed-height: true;
+  background-color: transparent; /* made transparent so window background shows through */
+  padding: 8px;
+  spacing: 4px;
+}
+
+/* ── App Elements ────────────────────────── */
+element {
+  border-radius: 6px;
+  padding: 8px 12px;
+  spacing: 10px;
+  cursor: pointer;
+}
+
+element-icon {
+  size: 36px;
+}
+
+element-text {
+  expand: true;
+  vertical-align: 0.5;
+  text-color: #ffffff;
+}
+
+/* ── Hover / Selected State ──────────────── */
+element selected {
+  background-color: #0078d4;
+  text-color: #ffffff;
+  border-radius: 6px;
+}
+
+/* ── Scrollbar ───────────────────────────── */
+scrollbar {
+  width: 4px;
+  handle-color: #0078d4;
+  background-color: #323248;
+}

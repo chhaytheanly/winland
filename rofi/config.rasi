@@ -1,0 +1,10 @@
+/* ── Win11 Start Menu Config ─────────────── */
+
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    font: "JetBrainsMono Nerd Font 12";
+    display-drun: ""; /* Windows icon */
+}
+
+@theme "~/.config/rofi/theme.rasi"
